@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>boltu.space | Launching to Space</title>
+  <meta name="description" content="boltu.space - Rocket launch vision and mission plan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #05070c;
+      --panel: rgba(8, 13, 24, 0.72);
+      --text: #e8eefc;
+      --muted: #afbbd4;
+      --accent: #4ed3ff;
+      --accent-2: #ff8f6b;
+      --line: rgba(255, 255, 255, 0.14);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 70% -10%, #1d3557 0%, transparent 60%),
+        radial-gradient(900px 500px at -10% 20%, #3a0f34 0%, transparent 55%),
+        var(--bg);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    .site {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 22px 48px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .brand {
+      font-family: "Sora", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+    }
+
+    .status {
+      font-size: 0.82rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 26px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .hero-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      animation: rise 0.9s ease-out;
+    }
+
+    .kicker {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 46ch;
+    }
+
+    .hero-photo {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 340px;
+      position: relative;
+      animation: rise 1.1s ease-out;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.08) contrast(1.04);
+    }
+
+    .hero-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(1, 4, 12, 0.54), transparent 42%);
+      pointer-events: none;
+    }
+
+    footer {
+      margin-top: 24px;
+      color: #9aa8c7;
+      font-size: 0.84rem;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        min-height: 290px;
+      }
+
+      .site {
+        padding: 18px 14px 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="site">
+    <header class="nav">
+      <div class="brand">boltu.space</div>
+      <div class="status">Mission: Orbital Launch Program</div>
+    </header>
+
+    <section class="hero">
+      <article class="hero-card">
+        <div class="kicker">Rocket Launch Vision</div>
+        <h1>From ignition to orbit, boltu.space is built for lift-off.</h1>
+        <p>
+          We will do it by using and developing model rocketry components to achieve reliable
+          sub-orbital space flight.
+        </p>
+      </article>
+
+      <figure class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=1600&q=80" alt="Rocket launching with bright flames and smoke trail" />
+      </figure>
+    </section>
+
+    <footer>
+      boltu.space © 2026 | Launching the next chapter beyond Earth.
+    </footer>
+  </main>
+</body>
+</html>
