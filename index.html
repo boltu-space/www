@@ -35,6 +35,26 @@
       min-height: 100vh;
       line-height: 1.5;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      right: -12vw;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(92vw, 1100px);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background-image: url("images/earth.jpg");
+      background-size: cover;
+      background-position: 48% center;
+      opacity: 0.58;
+      filter: saturate(1.14) brightness(1.06) contrast(1.1);
+      box-shadow: 0 0 120px rgba(85, 170, 255, 0.24);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .site {
@@ -42,6 +62,7 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 28px 22px 48px;
+      z-index: 1;
     }
 
     .nav {
@@ -154,6 +175,12 @@
     }
 
     @media (max-width: 900px) {
+      body::before {
+        right: -36vw;
+        width: min(120vw, 840px);
+        opacity: 0.48;
+      }
+
       .hero {
         grid-template-columns: 1fr;
       }
